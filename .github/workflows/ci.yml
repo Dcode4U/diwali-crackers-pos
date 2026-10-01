@@ -34,4 +34,4 @@ jobs:
           set +a
           python tests/acceptance.py
       - if: always()
-        run: docker compose down -v
+        run: if [ -f .env ]; then docker compose down -v; fi
